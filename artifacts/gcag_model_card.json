@@ -1,0 +1,115 @@
+{
+  "champion": "ridge_1",
+  "selection_MAE": 0.09977491572353954,
+  "test_MAE": 0.09820685837515379,
+  "test_RMSE": 0.1314463986444155,
+  "test_MASE": 0.7403812688193173,
+  "seasonal_naive_test_MAE": 0.118625,
+  "MAE_improvement_percent": 17.212342781746017,
+  "interval_evaluation": [
+    {
+      "level": 0.8,
+      "coverage": 0.7833333333333333,
+      "mean_interval_score": 0.46651867816235276,
+      "mean_radius": 0.15087895545764776
+    },
+    {
+      "level": 0.9,
+      "coverage": 0.8666666666666667,
+      "mean_interval_score": 0.5607971202161325,
+      "mean_radius": 0.19990017476847466
+    }
+  ],
+  "inference": {
+    "trends": [
+      {
+        "window": "full_complete_years",
+        "start": 1880,
+        "end": 2015,
+        "n_years": 136,
+        "slope_c_per_decade": 0.0667373240780497,
+        "lower_95": 0.0534811448367236,
+        "upper_95": 0.07999350331937581,
+        "p_value": 5.769437674379986e-23,
+        "HAC_lags_years": 3
+      },
+      {
+        "window": "since_1970",
+        "start": 1970,
+        "end": 2015,
+        "n_years": 46,
+        "slope_c_per_decade": 0.16860706136293555,
+        "lower_95": 0.150400844321149,
+        "upper_95": 0.1868132784047221,
+        "p_value": 1.257416810009369e-73,
+        "HAC_lags_years": 3
+      }
+    ],
+    "stationarity": [
+      {
+        "series": "level_with_trend",
+        "adf_stat": -3.510785324899711,
+        "adf_p": 0.03825086963856213,
+        "kpss_stat": 0.7790059854321569,
+        "kpss_p": 0.01,
+        "adf_lags": 24
+      },
+      {
+        "series": "first_difference",
+        "adf_stat": -12.023134014859949,
+        "adf_p": 2.991224140943392e-22,
+        "kpss_stat": 0.13347920145168043,
+        "kpss_p": 0.1,
+        "adf_lags": 23
+      }
+    ],
+    "stationarity_notes": [
+      "The test statistic is outside of the range of p-values available in the look-up table. The actual p-value is greater than the p-value returned.",
+      "The test statistic is outside of the range of p-values available in the look-up table. The actual p-value is smaller than the p-value returned.",
+      "adfuller currently returns a plain tuple whose length depends on the store and autolag arguments. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an ADFullerResult. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.",
+      "kpss currently returns a plain tuple whose length and layout depends on the store argument (and which silently drops `lags` when store=True). In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning a KPSSResult. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning."
+    ],
+    "seasonal_strength": 0.18932033973335538,
+    "exploratory_break": {
+      "break_year": 1972,
+      "bic": -194.7240733388542,
+      "pre_slope_c_per_decade": 0.034951486857645,
+      "post_slope_c_per_decade": 0.16659538521509737,
+      "linear_bic": -114.02867953173042,
+      "note": "Exploratory best single hinge among annual candidates; search uncertainty omitted; not causal attribution or a formal change-point confidence interval"
+    }
+  },
+  "forecast_error_diagnostics": {
+    "mean_error": -0.04718332787921051,
+    "ljung_box_12_p": 0.00010947806421813198,
+    "note": "Descriptive serial correlation of concatenated multi-horizon errors; not an in-sample innovation whiteness test"
+  },
+  "paired_comparison": {
+    "mae_gain_vs_seasonal_naive": 0.020418141624846217,
+    "bootstrap_lower_95": -0.0079687130963838,
+    "bootstrap_upper_95": 0.04880499634607623,
+    "blocks": 5,
+    "note": "Exploratory paired annual-block bootstrap; only five test blocks, weak uncertainty resolution"
+  },
+  "production_fit_warnings": [],
+  "splits": {
+    "selection": {
+      "first_origin": "1986-10-01",
+      "target_start": "1986-11-01",
+      "target_end": "2001-10-01",
+      "origins": 15
+    },
+    "calibration": {
+      "first_origin": "2001-10-01",
+      "target_start": "2001-11-01",
+      "target_end": "2011-10-01",
+      "origins": 10
+    },
+    "test": {
+      "first_origin": "2011-10-01",
+      "target_start": "2011-11-01",
+      "target_end": "2016-10-01",
+      "origins": 5
+    }
+  }
+}

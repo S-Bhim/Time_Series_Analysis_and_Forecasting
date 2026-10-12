@@ -1,0 +1,5 @@
+source,date,value,raw_date,csv_row,reason
+GCAG,2017-10-01,0.6895,09-10-2017,2,Disconnected tail after first missing month; date provenance unresolved
+GCAG,2017-11-01,0.7851,06-11-2017,4,Disconnected tail after first missing month; date provenance unresolved
+GISTEMP,2017-10-01,0.67,09-10-2017,3,Disconnected tail after first missing month; date provenance unresolved
+GISTEMP,2017-11-01,0.85,06-11-2017,5,Disconnected tail after first missing month; date provenance unresolved

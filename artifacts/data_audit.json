@@ -1,0 +1,47 @@
+{
+  "raw_sha256": "c6272a009f1ada973116261f8d4a5f17e3f1a654b686ed4921e9c27d3e89d8ee",
+  "input_rows": 3288,
+  "retained_rows": 3284,
+  "quarantined_rows": 4,
+  "format_counts": {
+    "YYYY-MM-DD": 480,
+    "DD-MM-YYYY": 2808
+  },
+  "missing_months": {
+    "GCAG": [
+      "2016-11",
+      "2016-12",
+      "2017-01",
+      "2017-02",
+      "2017-03",
+      "2017-04",
+      "2017-05",
+      "2017-06",
+      "2017-07",
+      "2017-08",
+      "2017-09"
+    ],
+    "GISTEMP": [
+      "2016-11",
+      "2016-12",
+      "2017-01",
+      "2017-02",
+      "2017-03",
+      "2017-04",
+      "2017-05",
+      "2017-06",
+      "2017-07",
+      "2017-08",
+      "2017-09"
+    ]
+  },
+  "policy": "Retain contiguous prefix per source; no imputation or inferred date repairs",
+  "start": "1880-01",
+  "end": "2016-10",
+  "rows_per_source": {
+    "GCAG": 1642,
+    "GISTEMP": 1642
+  },
+  "units": "Temperature anomaly, degrees Celsius (inferred from dataset family; original baseline metadata absent)",
+  "provenance": "User-supplied legacy snapshot; not authenticated against an upstream release"
+}

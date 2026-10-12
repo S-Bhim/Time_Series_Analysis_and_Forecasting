@@ -1,0 +1,10 @@
+{
+  "horizon": 12,
+  "train_window": 600,
+  "selection_months": 180,
+  "calibration_months": 120,
+  "test_months": 60,
+  "seed": 42,
+  "candidates": ["naive", "seasonal_naive", "drift", "ets_damped", "arima_111", "sarima_111_100", "ridge_1", "ridge_10", "boosting_3", "boosting_5"],
+  "interval_levels": [0.8, 0.9]
+}

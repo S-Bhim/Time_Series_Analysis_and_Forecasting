@@ -1,0 +1,298 @@
+{
+  "created_utc": "2026-10-12T16:09:02.642649+00:00",
+  "duration_seconds": 83.60040449999997,
+  "python": "3.12.14",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "plotly": "7.1.0",
+    "fastapi": "0.143.0"
+  },
+  "config": {
+    "horizon": 12,
+    "train_window": 600,
+    "selection_months": 180,
+    "calibration_months": 120,
+    "test_months": 60,
+    "seed": 42,
+    "candidates": [
+      "naive",
+      "seasonal_naive",
+      "drift",
+      "ets_damped",
+      "arima_111",
+      "sarima_111_100",
+      "ridge_1",
+      "ridge_10",
+      "boosting_3",
+      "boosting_5"
+    ],
+    "interval_levels": [
+      0.8,
+      0.9
+    ]
+  },
+  "config_sha256": "36f21f268e5f187c79552e3828bf9a4134762a14d43cb3a07bad202f8ca72393",
+  "source_code_sha256": {
+    "__init__.py": "959b024e39011a63a6648f29aeca1a6be113c012e21399293313a28a7ae82117",
+    "api.py": "ac6fcfc4b006047d02efdec894fdbbfa7e026c122082b1dd6850a5587ecee3e7",
+    "cli.py": "75ccc602e64d3eb265d968d9ae346f654b7f2987eebce5aa4c7a39de1119eaa1",
+    "dashboard.py": "2f4766f060ea444573a0222bbbf15eb3527ab5e746e274deb69824df737eec0d",
+    "dashboard_template.html": "8b9a99e6993dd5bda4454e743045dae38e38337c788236032c20e37a2af4bae8",
+    "data.py": "f2e9d40427f67f000e12c5f35a4d606aabcd480145cadb80a72922e51661edd5",
+    "diagnostics.py": "49988ebf301273c83040f21f1acd9e5810593c0b7b72c4e56831220ba4ba64f4",
+    "evaluation.py": "e834c795f1de140298cb60b676324384968780a7c76e48d333454f117e2d6cac",
+    "exploration.py": "bc3692d2f18c87a8b8fae48c46375b9ef43d8a03998e67b5c0528320bc3fe9f1",
+    "models.py": "12de9a6c507f3983d0f6270c48576434f52b023aff0ef206786b3e39397151e5",
+    "pipeline.py": "22e4ea0700df9ec70603d6f93781d25eeb65beb05e3c3ea1a71f9dff8ac1eae7",
+    "report.py": "ae16e5f5d66fcecfd002aace30a91ecf2e6d01a745a5860c01fc8cb418c5be86"
+  },
+  "raw_sha256": "c6272a009f1ada973116261f8d4a5f17e3f1a654b686ed4921e9c27d3e89d8ee",
+  "fit_count": 420,
+  "failed_fits": 0,
+  "final_candidate_fits": 20,
+  "eda_chart_types": 11,
+  "exported_eda_figures": 15,
+  "sources": {
+    "GCAG": {
+      "champion": "ridge_1",
+      "selection_MAE": 0.09977491572353954,
+      "test_MAE": 0.09820685837515379,
+      "test_RMSE": 0.1314463986444155,
+      "test_MASE": 0.7403812688193173,
+      "seasonal_naive_test_MAE": 0.118625,
+      "MAE_improvement_percent": 17.212342781746017,
+      "interval_evaluation": [
+        {
+          "level": 0.8,
+          "coverage": 0.7833333333333333,
+          "mean_interval_score": 0.46651867816235276,
+          "mean_radius": 0.15087895545764776
+        },
+        {
+          "level": 0.9,
+          "coverage": 0.8666666666666667,
+          "mean_interval_score": 0.5607971202161325,
+          "mean_radius": 0.19990017476847466
+        }
+      ],
+      "inference": {
+        "trends": [
+          {
+            "window": "full_complete_years",
+            "start": 1880,
+            "end": 2015,
+            "n_years": 136,
+            "slope_c_per_decade": 0.0667373240780497,
+            "lower_95": 0.0534811448367236,
+            "upper_95": 0.07999350331937581,
+            "p_value": 5.769437674379986e-23,
+            "HAC_lags_years": 3
+          },
+          {
+            "window": "since_1970",
+            "start": 1970,
+            "end": 2015,
+            "n_years": 46,
+            "slope_c_per_decade": 0.16860706136293555,
+            "lower_95": 0.150400844321149,
+            "upper_95": 0.1868132784047221,
+            "p_value": 1.257416810009369e-73,
+            "HAC_lags_years": 3
+          }
+        ],
+        "stationarity": [
+          {
+            "series": "level_with_trend",
+            "adf_stat": -3.510785324899711,
+            "adf_p": 0.03825086963856213,
+            "kpss_stat": 0.7790059854321569,
+            "kpss_p": 0.01,
+            "adf_lags": 24
+          },
+          {
+            "series": "first_difference",
+            "adf_stat": -12.023134014859949,
+            "adf_p": 2.991224140943392e-22,
+            "kpss_stat": 0.13347920145168043,
+            "kpss_p": 0.1,
+            "adf_lags": 23
+          }
+        ],
+        "stationarity_notes": [
+          "The test statistic is outside of the range of p-values available in the look-up table. The actual p-value is greater than the p-value returned.",
+          "The test statistic is outside of the range of p-values available in the look-up table. The actual p-value is smaller than the p-value returned.",
+          "adfuller currently returns a plain tuple whose length depends on the store and autolag arguments. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an ADFullerResult. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.",
+          "kpss currently returns a plain tuple whose length and layout depends on the store argument (and which silently drops `lags` when store=True). In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning a KPSSResult. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning."
+        ],
+        "seasonal_strength": 0.18932033973335538,
+        "exploratory_break": {
+          "break_year": 1972,
+          "bic": -194.7240733388542,
+          "pre_slope_c_per_decade": 0.034951486857645,
+          "post_slope_c_per_decade": 0.16659538521509737,
+          "linear_bic": -114.02867953173042,
+          "note": "Exploratory best single hinge among annual candidates; search uncertainty omitted; not causal attribution or a formal change-point confidence interval"
+        }
+      },
+      "forecast_error_diagnostics": {
+        "mean_error": -0.04718332787921051,
+        "ljung_box_12_p": 0.00010947806421813198,
+        "note": "Descriptive serial correlation of concatenated multi-horizon errors; not an in-sample innovation whiteness test"
+      },
+      "paired_comparison": {
+        "mae_gain_vs_seasonal_naive": 0.020418141624846217,
+        "bootstrap_lower_95": -0.0079687130963838,
+        "bootstrap_upper_95": 0.04880499634607623,
+        "blocks": 5,
+        "note": "Exploratory paired annual-block bootstrap; only five test blocks, weak uncertainty resolution"
+      },
+      "production_fit_warnings": [],
+      "splits": {
+        "selection": {
+          "first_origin": "1986-10-01",
+          "target_start": "1986-11-01",
+          "target_end": "2001-10-01",
+          "origins": 15
+        },
+        "calibration": {
+          "first_origin": "2001-10-01",
+          "target_start": "2001-11-01",
+          "target_end": "2011-10-01",
+          "origins": 10
+        },
+        "test": {
+          "first_origin": "2011-10-01",
+          "target_start": "2011-11-01",
+          "target_end": "2016-10-01",
+          "origins": 5
+        }
+      }
+    },
+    "GISTEMP": {
+      "champion": "ridge_1",
+      "selection_MAE": 0.11725669726209244,
+      "test_MAE": 0.1108924485013101,
+      "test_RMSE": 0.13795061671400166,
+      "test_MASE": 0.7285391801110226,
+      "seasonal_naive_test_MAE": 0.11533333333333333,
+      "MAE_improvement_percent": 3.850478178054828,
+      "interval_evaluation": [
+        {
+          "level": 0.8,
+          "coverage": 0.75,
+          "mean_interval_score": 0.5003243246642787,
+          "mean_radius": 0.17884611649273524
+        },
+        {
+          "level": 0.9,
+          "coverage": 0.9166666666666666,
+          "mean_interval_score": 0.5889944763572428,
+          "mean_radius": 0.2640275720132518
+        }
+      ],
+      "inference": {
+        "trends": [
+          {
+            "window": "full_complete_years",
+            "start": 1880,
+            "end": 2015,
+            "n_years": 136,
+            "slope_c_per_decade": 0.0699977537649285,
+            "lower_95": 0.05663008012094262,
+            "upper_95": 0.0833654274089144,
+            "p_value": 1.0339074598835865e-24,
+            "HAC_lags_years": 3
+          },
+          {
+            "window": "since_1970",
+            "start": 1970,
+            "end": 2015,
+            "n_years": 46,
+            "slope_c_per_decade": 0.17535255421934426,
+            "lower_95": 0.1576747556640407,
+            "upper_95": 0.1930303527746478,
+            "p_value": 3.4328985178023366e-84,
+            "HAC_lags_years": 3
+          }
+        ],
+        "stationarity": [
+          {
+            "series": "level_with_trend",
+            "adf_stat": -3.7003504302358117,
+            "adf_p": 0.022334187041254675,
+            "kpss_stat": 0.8367170540734813,
+            "kpss_p": 0.01,
+            "adf_lags": 25
+          },
+          {
+            "series": "first_difference",
+            "adf_stat": -11.465921202408044,
+            "adf_p": 5.4116142622528824e-21,
+            "kpss_stat": 0.11745581431450532,
+            "kpss_p": 0.1,
+            "adf_lags": 24
+          }
+        ],
+        "stationarity_notes": [
+          "The test statistic is outside of the range of p-values available in the look-up table. The actual p-value is greater than the p-value returned.",
+          "The test statistic is outside of the range of p-values available in the look-up table. The actual p-value is smaller than the p-value returned.",
+          "adfuller currently returns a plain tuple whose length depends on the store and autolag arguments. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an ADFullerResult. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.",
+          "kpss currently returns a plain tuple whose length and layout depends on the store argument (and which silently drops `lags` when store=True). In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning a KPSSResult. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning."
+        ],
+        "seasonal_strength": 0.24477514351906715,
+        "exploratory_break": {
+          "break_year": 1972,
+          "bic": -196.88930036714228,
+          "pre_slope_c_per_decade": 0.0365374670764248,
+          "post_slope_c_per_decade": 0.17511624822631813,
+          "linear_bic": -108.42093440552297,
+          "note": "Exploratory best single hinge among annual candidates; search uncertainty omitted; not causal attribution or a formal change-point confidence interval"
+        }
+      },
+      "forecast_error_diagnostics": {
+        "mean_error": -0.05352791896557162,
+        "ljung_box_12_p": 0.09570055731284029,
+        "note": "Descriptive serial correlation of concatenated multi-horizon errors; not an in-sample innovation whiteness test"
+      },
+      "paired_comparison": {
+        "mae_gain_vs_seasonal_naive": 0.004440884832023229,
+        "bootstrap_lower_95": -0.021872472107937198,
+        "bootstrap_upper_95": 0.033817468098267946,
+        "blocks": 5,
+        "note": "Exploratory paired annual-block bootstrap; only five test blocks, weak uncertainty resolution"
+      },
+      "production_fit_warnings": [],
+      "splits": {
+        "selection": {
+          "first_origin": "1986-10-01",
+          "target_start": "1986-11-01",
+          "target_end": "2001-10-01",
+          "origins": 15
+        },
+        "calibration": {
+          "first_origin": "2001-10-01",
+          "target_start": "2001-11-01",
+          "target_end": "2011-10-01",
+          "origins": 10
+        },
+        "test": {
+          "first_origin": "2011-10-01",
+          "target_start": "2011-11-01",
+          "target_end": "2016-10-01",
+          "origins": 5
+        }
+      }
+    }
+  },
+  "source_comparison": {
+    "level_correlation": 0.9847003252741469,
+    "difference_correlation": 0.8345400381612125,
+    "mean_GCAG_minus_GISTEMP": 0.02486437271619975,
+    "note": "Sources have distinct reference baselines and shared observational information. They are not independent replications; do not pool raw anomalies."
+  },
+  "warning": "Historical research snapshot, not a current climate forecast or emissions scenario projection"
+}
