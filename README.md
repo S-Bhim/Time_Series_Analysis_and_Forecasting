@@ -2,7 +2,7 @@
 
 A complete standalone project built from the supplied monthly global temperature CSV. It starts with raw-data inspection and cleaning, develops a full exploratory visualization analysis, then performs statistical inference, forecasting, model comparison, uncertainty calibration and local serving. No earlier project, notebook or saved experiment is required to reproduce it.
 
-**Start with [the interactive dashboard](reports/dashboard.html), [the executed notebook](notebooks/01_end_to_end.ipynb), or [the results report](reports/results.md).** The HTML dashboard is self-contained and works offline. No installation is needed to view it in a browser.
+**Start with [the interactive dashboard](https://s-bhim.github.io/Time_Series_Analysis_and_Forecasting/reports/dashboard.html), [the executed notebook](notebooks/01_end_to_end.ipynb), or [the results report](reports/results.md).** The HTML dashboard is self-contained and works offline. No installation is needed to view it in a browser.
 
 ## What is included
 
